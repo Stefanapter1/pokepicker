@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pokepicker</title>
+    <link rel="stylesheet" type ="text/css" href="/styles/main.css">
+    <link href="https://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
+</head>
+
+<body>
+
+    <h2> Poképicker </h2>
+<div class="page-divider">
+    <div class="card">
+         <div class="container">
+                <div class="pokemon-selected">
+                               <h1 class="pokeName"> <%= name %> </h1>
+                 </div>
+                <div>
+                     <img src= <%= sprite %> >
+                </div>
+        </div>
+    
+    <form id="myForm" method="POST">
+         <label for="submit"></label>
+         <input id="get" type="submit" value="Member 1" formaction="/pokemonOne">
+    </form>
+    </div>   
+    
+    <div class="card">
+    <div class="container">
+             <div class="pokemon-selectedTwo">
+                <h1 class="pokeName"> <%= name %> </h1>
+            </div>
+             <div>
+                <img src= <%= sprite %> >
+             </div>
+    </div>
+        <form id="myForm" method="POST">
+             <label for="submit"></label>
+             <input id="get" type="submit" value="Member 2" formaction="/pokemonTwo">
+         </form>
+    </div>
+    <div class="card">
+        <div class="container">
+               <div class="pokemon-selected">
+                <h1 class="pokeName"> <%= name %> </h1>
+                </div>
+               <div>
+                    <img src= <%= sprite %> >
+               </div>
+       </div>
+   
+   <form id="myForm" method="POST">
+        <label for="submit"></label>
+        <input id="get" type="submit" value="Member 1" formaction="/pokemonOne">
+   </form>
+   </div> 
+</div>
+<div class="page-divider">
+    <div class="card">
+         <div class="container">
+                <div class="pokemon-selected">
+                    <h1 class="pokeName"> <%= name %> </h1>
+                 </div>
+                <div>
+                     <img src= <%= sprite %> >
+                </div>
+        </div>
+    
+    <form id="myForm" method="POST">
+         <label for="submit"></label>
+         <input id="get" type="submit" value="Member 1" formaction="/pokemonOne">
+    </form>
+    </div>   
+    
+    <div class="card">
+    <div class="container">
+             <div class="pokemon-selectedTwo">
+                <h1 class="pokeName"> <%= name %> </h1>
+            </div>
+             <div>
+                <img src= <%= sprite %> >
+             </div>
+    </div>
+        <form id="myForm" method="POST">
+             <label for="submit"></label>
+             <input id="get" type="submit" value="Member 2" formaction="/pokemonTwo">
+         </form>
+    </div>
+    <div class="card">
+        <div class="container">
+               <div class="pokemon-selected">
+                    <h1 class="pokeName"> <%= name %> </h1>
+                </div>
+               <div>
+                    <img src= <%= sprite %> >
+               </div>
+       </div>
+   
+   <form id="myForm" method="POST">
+        <label for="submit"></label>
+        <input id="get" type="submit" value="Member 1" formaction="/pokemonOne">
+   </form>
+   </div> 
+</div>
+</body>
+</html>

@@ -1,0 +1,125 @@
+:root {
+    --card-height: 40vh;
+    --card-width: 40vh;
+}
+.page-divider{
+    display: flex;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+body {
+    margin-top: 0px;
+    padding-top: 0px;
+    min-height: 100vh;
+    background: #212534;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 2rem;
+    box-sizing: border-box;
+}
+
+img {
+    width: 80px;
+    height: 80px;
+}
+h2 {
+    color: brown;
+    width: 100%;
+    margin: 0px;
+    text-align: center;
+    font-family: 'Pokemon Solid', sans-serif;
+}
+.container {
+    border-color: black;
+    height: var(--card-height);
+    width: var(--card-width);
+    background: url(images/insidepokeball.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 3px;
+    position: relative;
+    border-radius: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+.container::before {
+content: "";
+width: 42vh;
+height: 42vh;
+border-radius: 100%;
+background-image: linear-gradient(
+    var(--rotate),
+    pink,
+    white,
+    red 23%
+);
+position: absolute;
+z-index: -1;
+animation: spin 2.5s linear  infinite;
+}
+.container::after {
+    content: "";
+    width: 48vh;
+    height: 48vh;
+    border-radius: 100%;
+    background: url(images/Poké_Ball_icon.svg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 2;
+    }
+    .container:hover::after {
+        animation: hoverdisplay 1s linear;
+        opacity: 0;
+    }
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+}
+
+input#get {
+    margin-top: 10px;
+    width: 250px;
+}
+input#get:hover {
+  background-color: red;
+  border: 4px, solid, black;
+}
+
+.pokeName {
+    color: azure;
+    margin-top: 40px;
+    margin-bottom: 0px;
+    font-family: 'Pokemon Solid', sans-serif;
+    font-size: 100%;
+    -webkit-text-stroke: 0.1px rgb(227, 227, 227);
+    letter-spacing: 1px;
+}
+@keyframes spin {
+    0% {
+        --rotate: 0deg;
+    }
+    100% {
+        --rotate: 360deg;
+    }
+}
+
+@keyframes hoverdisplay {
+    0% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0%;
+    }
+}
