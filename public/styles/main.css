@@ -4,6 +4,8 @@
 }
 .page-divider{
     display: flex;
+    flex-wrap: wrap;
+    margin-left: 17%;
 }
 .card {
     display: flex;
@@ -26,12 +28,18 @@ img {
     width: 80px;
     height: 80px;
 }
-h2 {
-    color: brown;
+h1 {
+    color: transparent;
     width: 100%;
     margin: 0px;
+    margin-bottom: 10px;
+    margin-top: 10px;
     text-align: center;
     font-family: 'Pokemon Solid', sans-serif;
+    background:url(images/pattern_hexagon-7_1_1_0-0_10_1__ffffff_805ad5.png);
+    -webkit-background-clip: text;
+    animation: backgroundtext 20s linear infinite;
+    
 }
 .container {
     border-color: black;
@@ -122,4 +130,9 @@ input#get:hover {
     100% {
         opacity: 0%;
     }
+}
+
+@keyframes backgroundtext {
+    from {background-position: 0 0}
+    to { background-position: 100%, 100%;}
 }

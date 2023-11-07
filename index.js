@@ -4,27 +4,24 @@ const P = new Pokedex();
 const app = express();
 const port = 4000;
 
-app.use(express.static("public"));
-const whoseThat = "https://e7.pngegg.com/pngimages/794/778/png-clipart-pokemon-quest-pokemon-sun-and-moon-pokemon-go-hitmonchan-hitmonchan-hand-monochrome-thumbnail.png"
-app.get("/", (req, res) => {
-    res.render("index.ejs", {name: "?" , sprite: whoseThat});
-});
+app.use(express.static('public'));
 
-app.post("/pokemonOne", async (req, res) => {
-    try {
-        var randomNum = Math.floor(Math.random() * (1210 - 1) + 1);
-        var pokemonSpecies = await P.getPokemonSpeciesByName(randomNum)
-        var randomimage = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + randomNum + ".png"
-    res.render("index.ejs", { 
-                 name: JSON.stringify(pokemonSpecies.name),
-                 sprite: randomimage
-            });
-    } 
-    catch (error) {
-        console.log(error);
-        }
+app.get('/', async (req, res) => {
+  // created an empty array called team.
+  const team = [];
+// created a for loop that whilst i is less than 6, it will repeat and generate a random pokemon.
+  for (let i = 0; i < 6; i++) {
+// this is assigned to the constant of species
+    const species = await P.getPokemonSpeciesByName(
+      Math.round(Math.random() * 1017)
+    );
+// this generated team memeber is then pushed into the array after one another - giving a team of six pokemeon.
+    team.push(species);
+  }
+
+  res.render('index.ejs', { team });
 });
 
 app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+  console.log(`Server is running on http://localhost:${port}`);
 });

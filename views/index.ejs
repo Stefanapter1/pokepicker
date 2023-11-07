@@ -10,101 +10,28 @@
 </head>
 
 <body>
-
-    <h2> Poképicker </h2>
-<div class="page-divider">
-    <div class="card">
-         <div class="container">
-                <div class="pokemon-selected">
-                               <h1 class="pokeName"> <%= name %> </h1>
-                 </div>
-                <div>
-                     <img src= <%= sprite %> >
-                </div>
-        </div>
-    
-    <form id="myForm" method="POST">
-         <label for="submit"></label>
-         <input id="get" type="submit" value="Member 1" formaction="/pokemonOne">
-    </form>
-    </div>   
-    
-    <div class="card">
-    <div class="container">
-             <div class="pokemon-selectedTwo">
-                <h1 class="pokeName"> <%= name %> </h1>
-            </div>
-             <div>
-                <img src= <%= sprite %> >
-             </div>
-    </div>
-        <form id="myForm" method="POST">
-             <label for="submit"></label>
-             <input id="get" type="submit" value="Member 2" formaction="/pokemonTwo">
-         </form>
-    </div>
-    <div class="card">
-        <div class="container">
-               <div class="pokemon-selected">
-                <h1 class="pokeName"> <%= name %> </h1>
-                </div>
-               <div>
-                    <img src= <%= sprite %> >
+     <h1> Poképicker </h1>
+     <div class="page-divider">
+          <!-- This is a function that calls the array (team) and executes a function for each of them 
+               with the name (pokemon?)-->
+          <% team.forEach(function(pokemon) { %>
+          <!-- the function creates a card, contained and pokemon selected DIV for each array member and 
+               assigns the EJS .name from the JSON-->
+               <div class="card">
+                    <div class="container">
+                         <div class="pokemon-selected">
+                              <h2 class="pokeName">
+                                   <%= pokemon.name %>
+                              </h2>
+                         </div>
+                         <div>
+          <!-- Here the images are rended directly from the JSON? But how is it the same one?-->
+                              <img src=<%='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' +
+                                   pokemon.pokedex_numbers[0].entry_number + '.png' %> >
+                         </div>
+                    </div>
                </div>
-       </div>
-   
-   <form id="myForm" method="POST">
-        <label for="submit"></label>
-        <input id="get" type="submit" value="Member 1" formaction="/pokemonOne">
-   </form>
-   </div> 
-</div>
-<div class="page-divider">
-    <div class="card">
-         <div class="container">
-                <div class="pokemon-selected">
-                    <h1 class="pokeName"> <%= name %> </h1>
-                 </div>
-                <div>
-                     <img src= <%= sprite %> >
-                </div>
-        </div>
-    
-    <form id="myForm" method="POST">
-         <label for="submit"></label>
-         <input id="get" type="submit" value="Member 1" formaction="/pokemonOne">
-    </form>
-    </div>   
-    
-    <div class="card">
-    <div class="container">
-             <div class="pokemon-selectedTwo">
-                <h1 class="pokeName"> <%= name %> </h1>
-            </div>
-             <div>
-                <img src= <%= sprite %> >
-             </div>
-    </div>
-        <form id="myForm" method="POST">
-             <label for="submit"></label>
-             <input id="get" type="submit" value="Member 2" formaction="/pokemonTwo">
-         </form>
-    </div>
-    <div class="card">
-        <div class="container">
-               <div class="pokemon-selected">
-                    <h1 class="pokeName"> <%= name %> </h1>
-                </div>
-               <div>
-                    <img src= <%= sprite %> >
-               </div>
-       </div>
-   
-   <form id="myForm" method="POST">
-        <label for="submit"></label>
-        <input id="get" type="submit" value="Member 1" formaction="/pokemonOne">
-   </form>
-   </div> 
-</div>
+               <% }); %>
+     </div>
 </body>
 </html>
