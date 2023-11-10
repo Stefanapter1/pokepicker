@@ -22,6 +22,9 @@ body {
     flex-direction: column;
     padding-bottom: 2rem;
     box-sizing: border-box;
+    background:url(images/pattern_waves-1_4_2_0-0_140_2__f8fbff_eaf4ff_d6eaff_84c2ff_add6ff.png);
+    -webkit-background-clip: text;
+    animation: backgroundtext 20s linear infinite;
 }
 
 img {
@@ -29,16 +32,14 @@ img {
     height: 80px;
 }
 h1 {
-    color: transparent;
+    color: red;
+    border:0.5px, black;
     width: 100%;
     margin: 0px;
     margin-bottom: 10px;
     margin-top: 10px;
     text-align: center;
     font-family: 'Pokemon Solid', sans-serif;
-    background:url(images/pattern_hexagon-7_1_1_0-0_10_1__ffffff_805ad5.png);
-    -webkit-background-clip: text;
-    animation: backgroundtext 20s linear infinite;
     
 }
 .container {
