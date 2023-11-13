@@ -2,6 +2,14 @@
     --card-height: 40vh;
     --card-width: 40vh;
 }
+.buttons{
+    height: 100px;
+    width: 100px;
+}
+button{
+    height: 100px;
+    width: 100px;
+}
 .page-divider{
     display: flex;
     flex-wrap: wrap;
