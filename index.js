@@ -1,6 +1,6 @@
 import express from 'express';
 import Pokedex from 'pokedex-promise-v2';
-import axios from 'axios';
+
 const P = new Pokedex();
 const app = express();
 const port = 4000;
@@ -37,40 +37,8 @@ app.get('/', async (req, res) => {
     }
   }
 
-  // created a for loop that whilst i is less than 6, it will repeat and generate a random pokemon.
-
-  // this is assigned to the constant of species
-  console.log(team);
   res.render('index.ejs', { team });
 });
-
-const a = new Array();
-Array.from({ length: 6 }, () => Math.floor(Math.random() * 1017));
-
-// app.get('/fire', async (req, res) => {
-//   const team = [];
-
-//   try {
-//     const response = await axios.get(
-//       'https://pokeapi.co/api/v2/pokemon?limit=1017'
-//     );
-
-//     const pokedex = P.getPokedexList();
-
-//     const fireTypePokemon = response.data.results.filter((pokemon) =>
-//       pokemon.type.includes('Fire')
-//     );
-
-//     for (let i = 0; i < 6; i++) {
-//       const randomPokemon = Math.floor(Math.random() * fireTypePokemon.length);
-//       team.push(randomPokemon);
-//     }
-//   } catch (error) {
-//     console.error(error);
-//   }
-
-//   res.render('index.ejs', { team });
-// });
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
