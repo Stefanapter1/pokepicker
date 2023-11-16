@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pokepicker</title>
-    <link rel="stylesheet" type ="text/css" href="/styles/main.css">
-    <link href="https://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>pokepicker</title>
+     <link rel="stylesheet" type="text/css" href="/styles/main.css">
+     <link href="https://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
 </head>
 
 <body>
@@ -15,7 +16,7 @@
           <!-- This is a function that calls the array (team) and executes a function for each of them 
                with the name (pokemon?)-->
           <% team.forEach(function(pokemon) { %>
-          <!-- the function creates a card, contained and pokemon selected DIV for each array member and 
+               <!-- the function creates a card, contained and pokemon selected DIV for each array member and 
                assigns the EJS .name from the JSON-->
                <div class="card">
                     <div class="container">
@@ -25,7 +26,7 @@
                               </h2>
                          </div>
                          <div>
-          <!-- Here the images are rended directly from the JSON? But how is it the same one?-->
+                              <!-- Here the images are rended directly from the JSON? But how is it the same one?-->
                               <img src=<%='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' +
                                    pokemon.pokedex_numbers[0].entry_number + '.png' %> >
                          </div>
@@ -33,10 +34,15 @@
                </div>
                <% }); %>
      </div>
-     <form action = "/firepokemon" method="app" class="buttons">
-          <button type="submit" value="Fire!" name="type"> </button>
-      </form>
+
+     <div style="display: flex; flex-direction: row; gap: 1rem; align-items: center; margin: 1rem auto">
+          <% for(let i=0; i < 9; i++){%>
+               <form action="" method="get" class="buttons">
+                    <input type="hidden" name="gen" value="<%= i+1 %>" />
+                    <button type="submit">Generation <%= i+1 %></button>
+               </form>
+               <% }; %>
+     </div>
 </body>
-     </form>
-</body>
+
 </html>
